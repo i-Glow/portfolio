@@ -15,8 +15,10 @@ export default function Contact() {
   const [sending, setLoading] = useState("DEFAULT");
 
   const sendEmail = (e: FormEvent) => {
-    setLoading("SENDING");
     e.preventDefault();
+    if (sending === "SENT") return;
+
+    setLoading("SENDING");
 
     const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID || "";
     const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID || "";
@@ -52,7 +54,8 @@ export default function Contact() {
           <div className="flex flex-col gap-2 w-full">
             <label className="text-cyan-600 font-bold ml-4">Name</label>
             <input
-              className="outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
+              required
+              className="required outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
               type="text"
               name="name"
               placeholder="John Doe"
@@ -61,6 +64,7 @@ export default function Contact() {
           <div className="flex flex-col gap-2 w-full">
             <label className="text-cyan-600 font-bold ml-4">Email</label>
             <input
+              required
               className="outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
               type="email"
               name="email"
@@ -71,6 +75,7 @@ export default function Contact() {
         <div className="flex flex-col gap-2 w-full">
           <label className="text-cyan-600 font-bold ml-4">Message</label>
           <textarea
+            required
             className="outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all h-40 resize-none rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
             maxLength={1024}
             name="message"

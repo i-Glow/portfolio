@@ -44,5 +44,9 @@ body {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
+
+    .required::-webkit-validation-bubble-message {
+      display: none;
+    }
   }
 }

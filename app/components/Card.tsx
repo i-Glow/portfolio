@@ -15,9 +15,8 @@ export default function Card({ project }: Props) {
       <div className="rounded-lg overflow-hidden w-full">
         <Image
           src={project.image}
-          width={0}
+          width={400}
           height={0}
-          layout="responsive"
           className="aspect-video group-hover:scale-105 duration-200"
           alt={project.title}
         />
