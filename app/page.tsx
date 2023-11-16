@@ -9,7 +9,8 @@ export default function Home() {
     <main className="min-h-screen bg-slate-900 relative">
       <Nav />
       <Hero />
-      <Projects />
+      <Projects type="Professional" />
+      <Projects type="Personal" />
       <Contact />
       <Footer />
     </main>

@@ -1,12 +1,19 @@
 import type { project } from "../../types";
 
-const projects: project[] = [
+export const projects: project[] = [
   {
-    title: "electro industry",
-    description: "Company website",
-    tools: ["React js", "Styled components", "Firebase"],
-    image: "electro-industry.png",
-    link: "https://www.electroindustry.io",
+    title: "Elomradz",
+    description: "An agency hosting webapp",
+    tools: [
+      "React js",
+      "Tailwind css",
+      "shadcn",
+      "Typescript",
+      "Node.js",
+      "MySQL",
+    ],
+    image: "elomradz.png",
+    link: "https://www.elomradz.com",
     repository: "",
   },
   {
@@ -18,13 +25,36 @@ const projects: project[] = [
     repository: "",
   },
   // {
-  //   title: "electro industry",
-  //   description: "Company website",
-  //   tools: ["React js", "Styled components", "Firebase"],
-  //   image: "/test.png",
+  //   title: "isUniv",
+  //   description: "University management system",
+  //   tools: [
+  //     "React js",
+  //     "Typescript",
+  //     "Styled components",
+  //     "Node.js",
+  //     "PostgreSQL",
+  //   ],
+  //   image: "test.png",
   //   link: "",
   //   repository: "",
   // },
+  {
+    title: "electro industry",
+    description: "Company website",
+    tools: ["React js", "Styled components", "Firebase"],
+    image: "electro-industry.png",
+    link: "https://www.electroindustry.io",
+    repository: "",
+  },
 ];
 
-export default projects;
+export const personalProjects = [
+  {
+    title: "Minesweeper",
+    description: "Minsweeper game",
+    tools: ["HTML", "CSS", "Javascript"],
+    image: "minesweeper.png",
+    link: "",
+    repository: "https://github.com/i-Glow/Minesweeper",
+  },
+];
