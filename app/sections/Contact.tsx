@@ -1,106 +1,93 @@
 "use client";
-import { FormEvent, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { IoSend } from "react-icons/io5";
 
-const sendingStates = new Map([
-  ["DEFAULT", { text: "SEND" }],
-  ["SENDING", { text: "SENDING..." }],
-  ["SENT", { text: "SENT" }],
-  ["FAILED", { text: "RESEND" }],
-]);
+import Link from "next/link";
+import React from "react";
+import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
+import { BsTwitterX } from "react-icons/bs";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaCircleCheck } from "react-icons/fa6";
+import { GoDotFill } from "react-icons/go";
 
-export default function Contact() {
-  const form = useRef<HTMLFormElement | null>(null);
-  const [sending, setLoading] = useState("DEFAULT");
+function Contact() {
+  const [copied, setCopied] = React.useState(false);
 
-  const sendEmail = (e: FormEvent) => {
-    e.preventDefault();
-    if (sending === "SENT") return;
-
-    setLoading("SENDING");
-
-    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID || "";
-    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID || "";
-    const publicKey = process.env.NEXT_PUBLIC_PB_KEY || "";
-
-    emailjs
-      .sendForm(serviceId, templateId, form.current as any, publicKey)
-      .then(
-        (result) => {
-          console.log(result.text);
-          setLoading("SENT");
-        },
-        (error) => {
-          setLoading("FAILED");
-          console.log(error.text);
-        }
-      );
-  };
+  React.useEffect(() => {
+    if (copied === true) {
+      setTimeout(() => {
+        setCopied(false);
+      }, 5000);
+    }
+  }, [copied]);
 
   return (
     <section
       id="contact"
-      className="relative flex flex-col justify-center items-center py-24"
+      className="flex flex-col justify-center items-center py-24 px-4"
     >
-      <div className="hidden sm:block absolute top-60 w-10/12 h-[400px] bg-blue-400/30 blur-3xl skew-y-12 rounded-full"></div>
-      <h2 className="text-6xl font-black mb-12">Contact Me</h2>
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="bg-slate-800/30 flex text-xl flex-col gap-5 justify-center items-center w-full p-5 max-w-3xl border border-cyan-950 drop-shadow-md sm:backdrop-blur-lg rounded-xl"
-      >
-        <div className="flex gap-5 w-full flex-wrap sm:flex-nowrap">
-          <div className="flex flex-col gap-2 w-full">
-            <label className="text-cyan-600 font-bold ml-4">Name</label>
-            <input
-              required
-              className="required outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
-              type="text"
-              name="name"
-              placeholder="John Doe"
-            />
-          </div>
-          <div className="flex flex-col gap-2 w-full">
-            <label className="text-cyan-600 font-bold ml-4">Email</label>
-            <input
-              required
-              className="outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
-              type="email"
-              name="email"
-              placeholder="johndoe@mail.com"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 w-full">
-          <label className="text-cyan-600 font-bold ml-4">Message</label>
-          <textarea
-            required
-            className="outline-none focus:border-cyan-800 placeholder:focus:text-cyan-800 duration-150 transition-all h-40 resize-none rounded-lg bg-slate-900 border border-cyan-950 px-4 py-2 placeholder:text-sky-950 placeholder:font-bold"
-            maxLength={1024}
-            name="message"
-            placeholder="Your message"
-          />
-        </div>
-        <button
-          type="submit"
-          className="border border-cyan-950 py-1.5 bg-slate-800/50 hover:bg-slate-800 duration-150 w-full rounded-lg group flex justify-center items-center"
+      <h2 className="text-5xl font-black mb-12 text-center">
+        Interested? Get in touch now!
+      </h2>
+      <div className="relative flex items-center cursor-pointer rounded-full group overflow-hidden">
+        <div
+          className={`${
+            copied ? "translate-y-0" : ""
+          } absolute group-hover:translate-y-0 translate-y-[200%] duration-200 ease-in-out bg-white/90 w-full h-full flex justify-center items-center`}
+          onClick={() => {
+            setCopied(true);
+            navigator.clipboard.writeText("devmailglow@gmail.com");
+          }}
         >
           <p
             className={`${
-              sending === "DEFAULT" && "group-hover:-translate-x-2"
-            } duration-300`}
+              copied ? "-translate-y-[200%]" : ""
+            } text-blue-950 font-semibold text-lg duration-150`}
           >
-            {sendingStates.get(sending)?.text}
+            Click to copy
           </p>
-          {sending === "DEFAULT" ? (
-            <IoSend
-              size={16}
-              className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 duration-300"
-            />
-          ) : null}
-        </button>
-      </form>
+          <div
+            className={`${
+              copied ? "" : "translate-y-[200%]"
+            } absolute duration-100 flex items-center gap-2`}
+          >
+            <FaCircleCheck size={24} className="text-green-600" />
+            <p className="text-blue-950 text-xl font-medium">copied</p>
+          </div>
+        </div>
+        <div className="border rounded-l-full px-4 sm:px-10 py-4">
+          <MdOutlineEmail size={24} />
+        </div>
+        <div className="border rounded-r-full px-4 sm:px-10 py-4">
+          <p className="tracking-wide">devmailglow@gmail.com</p>
+        </div>
+      </div>
+      <div className="w-3/4 max-w-[500px] h-[1px] my-12 bg-white"></div>
+      <div className="flex flex-col sm:flex-row items-center gap-10">
+        <Link
+          className="flex items-center gap-2"
+          href="https://www.linkedin.com/in/abdelmalek-bouhalassa"
+        >
+          <BiLogoLinkedin size={28} />
+          <h3 className="text-3xl">Linkedin</h3>
+        </Link>
+        <GoDotFill className="hidden sm:block" />
+        <Link
+          className="flex items-center gap-2"
+          href="https://www.github.com/i-Glow"
+        >
+          <BiLogoGithub size={28} />
+          <h3 className="text-3xl">Github</h3>
+        </Link>
+        <GoDotFill className="hidden sm:block" />
+        <Link
+          className="flex items-center gap-2"
+          href="https://www.twitter.com/Abdelmalekelele"
+        >
+          <BsTwitterX size={24} />
+          <h3 className="text-3xl">Twitter</h3>
+        </Link>
+      </div>
     </section>
   );
 }
+
+export default Contact;
