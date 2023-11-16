@@ -30,8 +30,8 @@ function Contact() {
       <div className="relative flex items-center cursor-pointer rounded-full group overflow-hidden">
         <div
           className={`${
-            copied ? "translate-y-0" : ""
-          } absolute group-hover:translate-y-0 translate-y-[200%] duration-200 ease-in-out bg-white/90 w-full h-full flex justify-center items-center`}
+            copied ? "translate-y-0" : "translate-y-[200%]"
+          } absolute group-hover:translate-y-0 duration-200 ease-in-out bg-white/90 w-full h-full flex justify-center items-center`}
           onClick={() => {
             setCopied(true);
             navigator.clipboard.writeText("devmailglow@gmail.com");
@@ -45,9 +45,9 @@ function Contact() {
             Click to copy
           </p>
           <div
-            className={`${
-              copied ? "" : "translate-y-[200%]"
-            } absolute duration-100 flex items-center gap-2`}
+            className={`
+            ${copied ? "" : "translate-y-[200%]"}
+             absolute duration-100 flex items-center gap-2`}
           >
             <FaCircleCheck size={24} className="text-green-600" />
             <p className="text-blue-950 text-xl font-medium">copied</p>

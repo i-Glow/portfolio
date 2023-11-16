@@ -34,7 +34,7 @@ export const projects: project[] = [
   //     "Node.js",
   //     "PostgreSQL",
   //   ],
-  //   image: "test.png",
+  // image: "test.png",
   //   link: "",
   //   repository: "",
   // },
