@@ -17,14 +17,17 @@ export default function Hero() {
           <Blob />
         </div>
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 z-50">
         <Link href="https://www.linkedin.com/in/abdelmalek-bouhalassa">
           <BiLogoLinkedin size={28} />
         </Link>
         <Link href="https://www.github.com/i-Glow">
           <BiLogoGithub size={28} />
         </Link>
-        <Link href="https://www.twitter.com/Abdelmalekelele">
+        <Link
+          href="https://www.twitter.com/Abdelmalekelele"
+          className="mt-[2px]"
+        >
           <BsTwitterX size={24} />
         </Link>
       </div>

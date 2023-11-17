@@ -1,6 +1,6 @@
 import type { project } from "../../types";
 
-export const projects: project[] = [
+const projects: project[] = [
   {
     title: "Elomradz",
     description: "An agency hosting webapp",
@@ -46,9 +46,6 @@ export const projects: project[] = [
     link: "https://www.electroindustry.io",
     repository: "",
   },
-];
-
-export const personalProjects = [
   {
     title: "Minesweeper",
     description: "Minsweeper game",
@@ -57,4 +54,14 @@ export const personalProjects = [
     link: "",
     repository: "https://github.com/i-Glow/Minesweeper",
   },
+  {
+    title: "Roadstructor",
+    description: "Traffic laws learning app",
+    tools: ["Tauri", "React", "Styled components"],
+    image: "roadstructor.png",
+    link: "",
+    repository: "https://github.com/i-Glow/code-route",
+  },
 ];
+
+export default projects;
