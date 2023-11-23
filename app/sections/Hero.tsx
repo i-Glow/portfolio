@@ -17,7 +17,7 @@ export default function Hero() {
           <Blob />
         </div>
       </div>
-      <div className="flex gap-4 z-50">
+      <div className="flex gap-4 z-20">
         <Link href="https://www.linkedin.com/in/abdelmalek-bouhalassa">
           <BiLogoLinkedin size={28} />
         </Link>

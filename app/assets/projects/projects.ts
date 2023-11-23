@@ -24,20 +24,14 @@ const projects: project[] = [
     link: "https://www.buyme-dz.com",
     repository: "",
   },
-  // {
-  //   title: "isUniv",
-  //   description: "University management system",
-  //   tools: [
-  //     "React js",
-  //     "Typescript",
-  //     "Styled components",
-  //     "Node.js",
-  //     "PostgreSQL",
-  //   ],
-  // image: "test.png",
-  //   link: "",
-  //   repository: "",
-  // },
+  {
+    title: "Travelious",
+    description: "Traveling agency website",
+    tools: ["PHP", "MySQL", "Javascript"],
+    image: "travelious.png",
+    link: "",
+    repository: "https://github.com/i-Glow/travel-agency",
+  },
   {
     title: "electro industry",
     description: "Company website",
