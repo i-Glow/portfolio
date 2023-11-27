@@ -6,15 +6,19 @@ import type { project } from "../types";
 
 type Props = {
   project: project;
+  onClick: () => any;
 };
 
-export default function Card({ project }: Props) {
+export default function Card({ project, onClick }: Props) {
   return (
     <div className="snap-center flex flex-col rounded-[12px] min-w-[300px] w-80 h-[360px] border border-cyan-950 p-1 relative overflow-hidden group">
       <div className="absolute w-full top-12 h-full bg-transparent group-hover:bg-white/[.02] rounded-3xl duration-200 blur-xl"></div>
-      <div className="rounded-lg overflow-hidden w-full">
+      <div
+        className="rounded-lg overflow-hidden w-full cursor-pointer"
+        onClick={onClick}
+      >
         <Image
-          src={project.image}
+          src={project.thumbnail}
           width={400}
           height={0}
           className="aspect-video group-hover:scale-105 duration-200"

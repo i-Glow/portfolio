@@ -16,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth bg-slate-900">
-      <body className={outfit.className}>{children}</body>
+      <body className={outfit.className}>
+        {children}
+        <div id="portal"></div>
+      </body>
     </html>
   );
 }
