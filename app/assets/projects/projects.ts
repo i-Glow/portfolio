@@ -1,6 +1,6 @@
 import type { project } from "../../types";
 
-const dev = process.env.ENV === "dev" ? "/" : "";
+const dev = process.env.NEXT_PUBLIC_DEV === "DEV" ? "/" : "";
 
 function generateImages(prefix: string, count: number): string[] {
   return Array.from({ length: count }).map(

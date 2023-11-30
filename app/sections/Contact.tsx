@@ -24,9 +24,14 @@ function Contact() {
       id="contact"
       className="flex flex-col justify-center items-center mb-20 py-24 px-4 no-tap-highlight"
     >
-      <h2 className="text-5xl font-black mb-12 text-center">
+      <h2 className="text-5xl font-black mb-4 text-center">
         Interested? Get in touch now!
       </h2>
+      <p className="text-center max-w-lg mb-8 text-gray-300">
+        I'm thrilled to connect with you. Whether you have a project in mind,
+        want to discuss collaboration opportunities, or just want to say hello,
+        feel free to reach out. Looking forward to hearing from you!
+      </p>
       <div className="relative flex items-center cursor-pointer rounded-full group overflow-hidden">
         <div
           className={`${
