@@ -28,9 +28,9 @@ function Contact() {
         Interested? Get in touch now!
       </h2>
       <p className="text-center max-w-lg mb-8 text-gray-300">
-        I'm thrilled to connect with you. Whether you have a project in mind,
-        want to discuss collaboration opportunities, or just want to say hello,
-        feel free to reach out. Looking forward to hearing from you!
+        I&apos;m thrilled to connect with you. Whether you have a project in
+        mind, want to discuss collaboration opportunities, or just want to say
+        hello, feel free to reach out. Looking forward to hearing from you!
       </p>
       <div className="relative flex items-center cursor-pointer rounded-full group overflow-hidden">
         <div
