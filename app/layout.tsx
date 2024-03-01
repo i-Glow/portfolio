@@ -18,10 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth bg-slate-900">
       <Script
+        id="galink"
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-BD9861Z0M1"
       ></Script>
-      <Script>
+      <Script id="gascript">
         {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
