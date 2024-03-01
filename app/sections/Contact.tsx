@@ -4,21 +4,12 @@ import Link from "next/link";
 import React from "react";
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
 import { BsTwitterX } from "react-icons/bs";
-import { MdOutlineEmail } from "react-icons/md";
-import { FaCircleCheck } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
+import Lottie from "lottie-react";
+import BreathingDot from "../assets/animations/breathing-dot.json";
+import Email from "../components/Email";
 
 function Contact() {
-  const [copied, setCopied] = React.useState(false);
-
-  React.useEffect(() => {
-    if (copied === true) {
-      setTimeout(() => {
-        setCopied(false);
-      }, 5000);
-    }
-  }, [copied]);
-
   return (
     <section
       id="contact"
@@ -32,40 +23,12 @@ function Contact() {
         mind, want to discuss collaboration opportunities, or just want to say
         hello, feel free to reach out. Looking forward to hearing from you!
       </p>
-      <div className="relative flex items-center cursor-pointer rounded-full group overflow-hidden">
-        <div
-          className={`${
-            copied ? "translate-y-0" : "translate-y-[200%]"
-          } absolute group-hover:translate-y-0 duration-200 ease-in-out bg-white/90 w-full h-full flex justify-center items-center`}
-          onClick={() => {
-            setCopied(true);
-            navigator.clipboard.writeText("devmailglow@gmail.com");
-          }}
-        >
-          <p
-            className={`${
-              copied ? "-translate-y-[200%]" : ""
-            } text-blue-950 font-semibold text-lg duration-150`}
-          >
-            Click to copy
-          </p>
-          <div
-            className={`
-            ${copied ? "" : "translate-y-[200%]"}
-             absolute duration-100 flex items-center gap-2`}
-          >
-            <FaCircleCheck size={24} className="text-green-600" />
-            <p className="text-blue-950 text-xl font-medium">copied</p>
-          </div>
-        </div>
-        <div className="border rounded-l-full px-4 sm:px-10 py-4">
-          <MdOutlineEmail size={24} />
-        </div>
-        <div className="border rounded-r-full px-4 sm:px-10 py-4">
-          <p className="tracking-wide">devmailglow@gmail.com</p>
-        </div>
+      <Email />
+      <div className="text-xs h-10 flex justify-center items-center">
+        <Lottie animationData={BreathingDot} loop={true} />
+        <p>Available now</p>
       </div>
-      <div className="w-3/4 max-w-[500px] h-[1px] my-12 bg-white"></div>
+      <div className="w-3/4 max-w-[500px] h-[1px] mb-12 mt-6 bg-white"></div>
       <div className="flex flex-col sm:flex-row items-center gap-10">
         <Link
           className="flex items-center gap-2"

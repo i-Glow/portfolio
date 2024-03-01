@@ -69,20 +69,26 @@ function Dialog({
           ref={dialogRef}
           className="bg-slate-900 max-w-6xl w-full md:w-5/6 aspect-video rounded-3xl p-1 relative group select-none"
         >
-          <IoIosCloseCircle
-            onClick={() => setIsOpen(-1)}
-            size={32}
-            className="absolute top-2 right-6 text-slate-800 md:text-transparent group-hover:text-slate-800 hover:scale-110 cursor-pointer duration-100"
-          />
-          <IoIosArrowDropleftCircle
-            onClick={() =>
-              setCarouselIndex((prev) =>
-                prev > 0 ? prev - 1 : projects[index].images.length - 1
-              )
-            }
-            size={32}
-            className="absolute top-1/2 left-6 text-slate-800 md:text-transparent group-hover:text-slate-800 hover:scale-110 cursor-pointer duration-100"
-          />
+          <div className="absolute top-2 right-12">
+            <IoIosCloseCircle
+              onClick={() => setIsOpen(-1)}
+              size={32}
+              className="absolute z-10 text-slate-800 md:text-transparent group-hover:text-slate-800 hover:scale-110 cursor-pointer duration-100"
+            />
+            <div className="absolute top-1 left-1 group-hover:bg-white w-6 aspect-square rounded-full duration-200"></div>
+          </div>
+          <div className="absolute top-1/2 left-6">
+            <IoIosArrowDropleftCircle
+              onClick={() =>
+                setCarouselIndex((prev) =>
+                  prev > 0 ? prev - 1 : projects[index].images.length - 1
+                )
+              }
+              size={32}
+              className="absolute text-slate-800 md:text-transparent group-hover:text-slate-800 hover:scale-110 cursor-pointer duration-100 z-10"
+            />
+            <div className="absolute top-1 left-1 group-hover:bg-white w-6 aspect-square rounded-full duration-200"></div>
+          </div>
           <Image
             src={projects[index].images[carouselIndex]}
             alt={projects[index].title}
@@ -90,15 +96,18 @@ function Dialog({
             height={1080}
             className="aspect-video w-full rounded-[20px]"
           />
-          <IoIosArrowDroprightCircle
-            onClick={() =>
-              setCarouselIndex(
-                (prev) => (prev + 1) % projects[index].images.length
-              )
-            }
-            size={32}
-            className="absolute top-1/2 right-6 text-slate-800 md:text-transparent group-hover:text-slate-800 hover:scale-110 cursor-pointer duration-100"
-          />
+          <div className="absolute top-1/2 right-12">
+            <IoIosArrowDroprightCircle
+              onClick={() =>
+                setCarouselIndex(
+                  (prev) => (prev + 1) % projects[index].images.length
+                )
+              }
+              size={32}
+              className="absolute text-slate-800 md:text-transparent group-hover:text-slate-800 hover:scale-110 cursor-pointer duration-100 z-10"
+            />
+            <div className="absolute top-1 left-1 group-hover:bg-white w-6 aspect-square rounded-full duration-200"></div>
+          </div>
         </div>
       </div>
     </Portal>
