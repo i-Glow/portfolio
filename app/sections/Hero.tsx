@@ -2,7 +2,7 @@
 import Blob from "../assets/blob";
 import Link from "next/link";
 import { BiLogoLinkedin, BiLogoGithub } from "react-icons/bi";
-import { BsTwitterX } from "react-icons/bs";
+import { BsTwitterX, BsWhatsapp } from "react-icons/bs";
 
 export default function Hero() {
   return (
@@ -18,17 +18,21 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex gap-4 z-20">
-        <Link href="https://www.linkedin.com/in/abdelmalek-bouhalassa">
-          <BiLogoLinkedin size={28} />
-        </Link>
-        <Link href="https://www.github.com/i-Glow">
-          <BiLogoGithub size={28} />
-        </Link>
         <Link
-          href="https://www.twitter.com/Abdelmalekelele"
+          href="https://wa.me/%2B213559716726"
+          target="_blank"
           className="mt-[2px]"
         >
-          <BsTwitterX size={24} />
+          <BsWhatsapp size={24} />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/abdelmalek-bouhalassa"
+          target="_blank"
+        >
+          <BiLogoLinkedin size={28} />
+        </Link>
+        <Link href="https://www.github.com/i-Glow" target="_blank">
+          <BiLogoGithub size={28} />
         </Link>
       </div>
     </div>

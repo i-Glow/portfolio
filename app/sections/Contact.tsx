@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
-import { BsTwitterX } from "react-icons/bs";
+import { BsTwitterX, BsWhatsapp } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
 import Lottie from "lottie-react";
 import BreathingDot from "../assets/animations/breathing-dot.json";
@@ -32,7 +32,17 @@ function Contact() {
       <div className="flex flex-col sm:flex-row items-center gap-10">
         <Link
           className="flex items-center gap-2"
+          href="https://wa.me/%2B213559716726"
+          target="_blank"
+        >
+          <BsWhatsapp size={24} />
+          <h3 className="text-3xl">Whatsapp</h3>
+        </Link>
+        <GoDotFill className="hidden sm:block" />
+        <Link
+          className="flex items-center gap-2"
           href="https://www.linkedin.com/in/abdelmalek-bouhalassa"
+          target="_blank"
         >
           <BiLogoLinkedin size={28} />
           <h3 className="text-3xl">Linkedin</h3>
@@ -41,18 +51,18 @@ function Contact() {
         <Link
           className="flex items-center gap-2"
           href="https://www.github.com/i-Glow"
+          target="_blank"
         >
           <BiLogoGithub size={28} />
           <h3 className="text-3xl">Github</h3>
         </Link>
-        <GoDotFill className="hidden sm:block" />
-        <Link
+        {/* <Link
           className="flex items-center gap-2"
           href="https://www.twitter.com/Abdelmalekelele"
         >
           <BsTwitterX size={24} />
           <h3 className="text-3xl">Twitter</h3>
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

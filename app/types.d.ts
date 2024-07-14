@@ -4,6 +4,8 @@ export type project = {
   tools: string[];
   thumbnail: string;
   images: string[];
+  loadingImages?: string[];
+  placeholder: string;
   link?: string;
   repository?: string;
 };
