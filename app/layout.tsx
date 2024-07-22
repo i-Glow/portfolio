@@ -8,6 +8,9 @@ const outfit = Outfit({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Abdelmalek",
   description: "Abdelmalek's portfolio/personal website",
+  openGraph: {
+    images: ["/favicon.ico"],
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth bg-slate-900">
+      <link rel="icon" href="/favicon.ico" />
       <Script
         id="galink"
         async

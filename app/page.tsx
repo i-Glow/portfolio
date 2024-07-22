@@ -1,5 +1,4 @@
 import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 import Nav from "./sections/Nav";
 import Projects from "./sections/Projects";
@@ -11,7 +10,6 @@ export default function Home() {
       <Hero />
       <Projects />
       <Contact />
-      {/* <Footer /> */}
     </main>
   );
 }
