@@ -23,7 +23,7 @@ function Email() {
         } absolute group-hover:translate-y-0 duration-200 ease-in-out bg-white/90 w-full h-full flex justify-center items-center`}
         onClick={() => {
           setCopied(true);
-          navigator.clipboard.writeText("devmailglow@gmail.com");
+          navigator.clipboard.writeText("abouhalassa@gmail.com");
         }}
       >
         <p
@@ -46,7 +46,7 @@ function Email() {
         <MdOutlineEmail size={24} />
       </div>
       <div className="border rounded-r-full px-4 sm:px-10 py-4">
-        <p className="tracking-wide">devmailglow@gmail.com</p>
+        <p className="tracking-wide">abouhalassa@gmail.com</p>
       </div>
     </div>
   );
