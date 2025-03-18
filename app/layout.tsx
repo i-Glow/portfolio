@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth bg-slate-900">
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/portfolio/favicon.ico" />
       <Script
         id="galink"
         async
