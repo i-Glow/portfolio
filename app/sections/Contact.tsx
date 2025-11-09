@@ -9,6 +9,7 @@ import Lottie from "lottie-react";
 import BreathingDot from "../assets/animations/breathing-dot.json";
 import Email from "../components/Email";
 import Ripple from "../components/Ripple";
+import { details } from "../assets/details";
 
 function Contact() {
   return (
@@ -34,7 +35,7 @@ function Contact() {
       <div className="z-50 flex flex-col md:flex-row items-center gap-8">
         <Link
           className="flex items-center gap-2 group hover:border-green-500 duration-100 border-2 border-transparent px-6 py-2 rounded-full"
-          href="https://wa.me/%2B213559716726"
+          href={details.whatsapp}
           target="_blank"
         >
           <BsWhatsapp
@@ -46,7 +47,7 @@ function Contact() {
         <GoDotFill className="hidden md:block" />
         <Link
           className="flex items-center gap-2 group hover:border-blue-500 duration-100 border-2 border-transparent px-6 py-2 rounded-full"
-          href="https://www.linkedin.com/in/abdelmalek-bouhalassa"
+          href={details.linkedin}
           target="_blank"
         >
           <BiLogoLinkedin
@@ -58,7 +59,7 @@ function Contact() {
         <GoDotFill className="hidden md:block" />
         <Link
           className="flex items-center gap-2 group hover:border-white duration-100 border-2 border-transparent px-6 py-2 rounded-full"
-          href="https://www.github.com/i-Glow"
+          href={details.github}
           target="_blank"
         >
           <BiLogoGithub

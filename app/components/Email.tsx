@@ -3,6 +3,7 @@
 import React from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaCircleCheck } from "react-icons/fa6";
+import { details } from "../assets/details";
 
 function Email() {
   const [copied, setCopied] = React.useState(false);
@@ -23,7 +24,7 @@ function Email() {
         } absolute group-hover:translate-y-0 duration-200 ease-in-out bg-white/90 w-full h-full flex justify-center items-center`}
         onClick={() => {
           setCopied(true);
-          navigator.clipboard.writeText("abouhalassa@gmail.com");
+          navigator.clipboard.writeText(details.email);
         }}
       >
         <p
@@ -46,7 +47,7 @@ function Email() {
         <MdOutlineEmail size={24} />
       </div>
       <div className="border rounded-r-full px-4 sm:px-10 py-4">
-        <p className="tracking-wide">abouhalassa@gmail.com</p>
+        <p className="tracking-wide">{details.email}</p>
       </div>
     </div>
   );
